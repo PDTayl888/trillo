@@ -1,0 +1,142 @@
+<div class="container">
+<table> 
+  <% @all_cards.each do |card| %>
+    <tr>
+      <td><%= card.title %></td>
+      <td><%= card.desc %></td>
+      <td><%= card.date %></td>
+      <td><%= card.member %></td>
+      <td><%= card.member %></td>
+    </tr>
+  <% end %>
+</table>
+  <div class="list">
+    <%= form_with scope: :new_card, local: true do |form| %>
+      <p>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+      </p>
+    
+      <p>
+        <%= form.label :desc %><br>
+        <%= form.text_field :desc %>
+      </p>
+      
+      <p>
+        <%= form.label :date %><br>
+        <%= form.text_field :date %>
+      </p>
+      
+      <p>
+        <%= form.label :member%><br>
+        <%= form.text_field :member %>
+      </p>
+      
+      <p>
+        <%= form.label :list %><br>
+        <%= form.text_field :list %>
+      </p>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+      <p>
+        <%= form.submit %>
+      </p>
+  <% end %>
+  </div>
+   
+  <div class="list">
+          <%= form_with scope: :card, local: true do |form| %>
+      <p>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+      </p>
+    
+      <p>
+        <%= form.label :desc %><br>
+        <%= form.text_field :desc %>
+      </p>
+      
+      <p>
+        <%= form.label :date %><br>
+        <%= form.text_field :date %>
+      </p>
+      
+      <p>
+        <%= form.label :member%><br>
+        <%= form.text_field :member %>
+      </p>
+      
+      <p>
+        <%= form.label :list %><br>
+        <%= form.text_field :list %>
+      </p>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+      <p>
+        <%= form.submit %>
+      </p>
+    <% end %>
+  </div>
+   
+  <div class="list">
+          <%= form_with scope: :card, local: true do |form| %>
+      <p>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+      </p>
+    
+      <p>
+        <%= form.label :desc %><br>
+        <%= form.text_field :desc %>
+      </p>
+      
+      <p>
+        <%= form.label :date %><br>
+        <%= form.text_field :date %>
+      </p>
+      
+      <p>
+        <%= form.label :member%><br>
+        <%= form.text_field :member %>
+      </p>
+      
+      <p>
+        <%= form.label :list %><br>
+        <%= form.text_field :list %>
+      </p>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+      <p>
+        <%= form.submit %>
+      </p>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+<style>
+.list {
+    border: 2px solid black;
+}
+.container {
+    display: flex;
+}
+</style>
+
+
+
+
+
+        <%# <form method="post" action="new_card">
+        <p><label>TITLE</label></p>
+        <input type="text" name="title"></input>
+        <p><label>DESCRIPTION</label></p>
+        <input type="text" name="desc"></input>
+        <p><label>DATE</label></p>
+        <input type="text" name="date"></input>
+        <p><label>MEMBER</label></p>
+        <input type="text" name="member"></input>
+        <p><label>LIST</label></p>
+        <input type="text" name="list"></input>
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>
+        <%# <button type="submit">SUBMIT</button> %> 

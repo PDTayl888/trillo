@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
     def index
-        puts "##$$$$###$$$$$"
+        puts "UUTTTTTTTTTTTTTT
+        @@@@@@"
         @all_cards = Card.all
     end
 
@@ -9,9 +10,13 @@ class CardsController < ApplicationController
 
     def create
         # @cards = Card.all
-        new_card = Card.new(params[:card])
-        new_card.save
-        redirect_to main_path
+        newest_card = Card.new(user_params)
+        newest_card.save
+        redirect_to 'main'
+    end
+
+    def user_params
+        params.require(:card).permit(:title, :desc, :date, :member, :list)
     end
 
 end

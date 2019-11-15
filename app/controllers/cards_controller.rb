@@ -12,11 +12,10 @@ class CardsController < ApplicationController
         # @cards = Card.all
         newest_card = Card.new(user_params)
         newest_card.save
-        redirect_to 'main'
+        redirect_to '/''
     end
 
     def user_params
         params.require(:card).permit(:title, :desc, :date, :member, :list)
-    end
-
-end
+      end
+  end
